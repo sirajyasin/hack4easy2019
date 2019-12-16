@@ -1,0 +1,356 @@
+<html>
+
+<head>
+
+<style>
+input {
+  display: none;
+}
+
+main {
+  position: relative;
+}
+
+header h1 {
+  font-family: Montserrat, "sans-serif";
+  font-size: 45px;
+  text-align: center;
+  color: #34495e;
+}
+header h1 .header-subtitile {
+  font-size: 0.35em;
+  margin-bottom: 5px;
+  position: relative;
+}
+header h1 .header-subtitile:before, header h1 .header-subtitile:after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  background-color: #34495e;
+}
+header h1 .header-subtitile:before {
+  left: -35%;
+}
+header h1 .header-subtitile:after {
+  right: -35%;
+}
+header h1 .header-title {
+  margin-top: 0;
+}
+
+html {
+  padding: 0 20px;
+  background-color: #ecf0f1;
+  font-family: "Lato", sans-serif;
+}
+
+main {
+  width: 985px;
+  display: block;
+  background-color: #e8e3e3;
+  min-height: 500px;
+  margin: 0 auto;
+}
+
+.park {
+  background-color: #dcd6d6;
+  padding: 60px;
+  position: relative;
+  border-top: 2px solid #fff;
+  -moz-box-shadow: 0px -20px 0px #c4baba;
+  -webkit-box-shadow: 0px -20px 0px #c4baba;
+  box-shadow: 0px -20px 0px #c4baba;
+  #margin-top: 50px;
+}
+
+
+.car:after, .car:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: inherit;
+  right: 80px;
+  position: absolute;
+}
+
+.car .car-front:after, .car .car-front:before {
+  content: "";
+  width: 20px;
+  height: 10px;
+  background-color: yellow;
+  position: absolute;
+  top: 70px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.car .car-middle:before, .car .car-middle:after {
+  content: "";
+  display: block;
+  border-bottom: 10px solid #495d65;
+  border-left: 30px solid transparent;
+  border-right: 40px solid transparent;
+  height: 10px;
+  width: 130px;
+  position: absolute;
+  right: 52px;
+}
+
+.car .car-back:before, .car .car-back:after {
+  content: "";
+  width: 23px;
+  height: 12px;
+  background-color: #D92626;
+  position: absolute;
+  bottom: -62px;
+}
+
+.car-line + .car-line {
+  margin-top: 40px;
+}
+
+.vacancy {
+  width: 285px;
+  height: 125px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  font-size: 31px;
+  text-align: center;
+  line-height: 1.5;
+  color: #333;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.vacancy:before {
+  content: "Vacant Slot";
+}
+.vacancy + .car {
+  margin-left: 40px;
+}
+
+.car {
+  width: 285px;
+  height: 125px;
+  background: #b6bec3;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  -moz-border-radius-topright: 40px 50%;
+  -webkit-border-top-right-radius: 40px 50%;
+  border-top-right-radius: 40px 50%;
+  -moz-border-radius-bottomright: 40px 50%;
+  -webkit-border-bottom-right-radius: 40px 50%;
+  border-bottom-right-radius: 40px 50%;
+  -moz-border-radius-bottomleft: 20px 30px;
+  -webkit-border-bottom-left-radius: 20px 30px;
+  border-bottom-left-radius: 20px 30px;
+  -moz-border-radius-topleft: 20px 30px;
+  -webkit-border-top-left-radius: 20px 30px;
+  border-top-left-radius: 20px 30px;
+}
+.car:after {
+  top: -12px;
+  -moz-border-radius: 3px 100% 0 0;
+  -webkit-border-radius: 3px;
+  border-radius: 3px 100% 0 0;
+}
+.car:before {
+  bottom: -12px;
+  -moz-border-radius: 0 0 100% 3px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 100% 3px;
+}
+.car .car-front {
+  border-bottom: 40px solid #495d65;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: 42px;
+  height: 0;
+  width: 70px;
+  right: 30px;
+  position: absolute;
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -moz-box-shadow: 0px 3px 0 #fff;
+  -webkit-box-shadow: 0px 3px 0 #fff;
+  box-shadow: 0px 3px 0 #fff;
+}
+.car .car-front:after {
+  -moz-transform: rotate(22deg);
+  -ms-transform: rotate(22deg);
+  -webkit-transform: rotate(22deg);
+  transform: rotate(22deg);
+  left: -5px;
+}
+.car .car-front:before {
+  -moz-transform: rotate(-22deg);
+  -ms-transform: rotate(-22deg);
+  -webkit-transform: rotate(-22deg);
+  transform: rotate(-22deg);
+  right: -5px;
+}
+.car.car-blue {
+  background-color: #3471eb;
+}
+.car.car-red {
+  background-color: #e74c3c;
+}
+.car.car-silver {
+  background-color: silver;
+}
+.car + .car,
+.car + .vacancy {
+  margin-left: 40px;
+}
+.car .car-middle:before {
+  bottom: 8px;
+}
+.car .car-middle:after {
+  top: 8px;
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+.car .car-back {
+  content: "";
+  border-bottom: 35px solid #495d65;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  height: 0;
+  top: 44px;
+  width: 60px;
+  left: -5px;
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  position: absolute;
+}
+.car .car-back:before {
+  left: -30px;
+  -moz-border-radius-bottomleft: 40px 22px;
+  -webkit-border-bottom-left-radius: 40px 22px;
+  border-bottom-left-radius: 40px 22px;
+}
+.car .car-back:after {
+  right: -30px;
+  -moz-border-radius-bottomright: 40px 22px;
+  -webkit-border-bottom-right-radius: 40px 22px;
+  border-bottom-right-radius: 40px 22px;
+}
+
+.left .car {
+   transform: rotate(-35deg);
+}
+.left .vacancy {
+   transform: rotate(-35deg);
+}
+.left .separator {
+transform: rotate(50deg);
+}
+
+.right .car,.vacancy {
+   transform: rotate(35deg);
+}
+.right .separator {
+transform: rotate(-50deg);
+}
+.separator {
+display: inline-block;
+width: 5px;
+border-left: 3px dashed #fff;
+height: 231px;
+top: 10px;
+position: absolute;
+}
+.middle_path {
+  height: 300px;
+  background-color: darkgrey;
+  
+}
+
+body {
+  width: 75%;
+  text-align: center;
+  margin: auto;
+  
+}
+.parking-area {
+height: 100px;
+text-align: center;
+vertical-align: middle;
+font-size: 2em;
+color: red;
+padding-top: 25px;
+background-color: antiquewhite;
+}
+</style>
+</head>
+
+<body>
+  <div class='parking-area'>VISITOR PARKING</div>
+  <div class='car-line park left'>
+      <div id='slot1' class="car car-red">
+        <div class="car-front"></div>
+        <div class="car-middle"></div>
+        <div class="car-back"></div>
+      </div>
+      <div class='separator'></div>
+      <div id='slot2' class="car car-blue">
+        <div class="car-front"></div>
+        <div class="car-middle"></div>
+        <div class="car-back"></div>
+      </div>
+      <div class='separator'></div>
+      <div id='slot3' class="vacancy">
+      </div>
+      <div class='separator'></div>
+      <div id='slot4' class="car car-blue">
+        <div class="car-front"></div>
+        <div class="car-middle"></div>
+        <div class="car-back"></div>
+      </div>
+      <div class='separator'></div>
+      <div id='slot5' class="car car-red">
+        <div class="car-front"></div>
+        <div class="car-middle"></div>
+        <div class="car-back"></div>
+      </div>
+  </div>
+  <div class='middle_path'></div>
+  <div class='car-line park right'>
+      <div id='slot6' class="car car-red">
+        <div class="car-front"></div>
+        <div class="car-middle"></div>
+        <div class="car-back"></div>
+      </div>
+      <div class='separator'></div>
+      <div id='slot7' class="vacancy"></div>
+      <div class='separator'></div>
+      <div id='slot8' class="vacancy"></div>
+      <div class='separator'></div>
+      <div id='slot9' class="vacancy"></div>
+      <div class='separator'></div>
+      <div id='slot10' class="car car-red">
+        <div class="car-front"></div>
+        <div class="car-middle"></div>
+        <div class="car-back"></div>
+      </div>
+  </div>
+</body>
+</html>
