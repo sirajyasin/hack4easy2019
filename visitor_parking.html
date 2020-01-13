@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body {
+  /* Location of the image */
+  background-image: url(vistor_parking2.png);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+
+}
+#container {
+  width: 1366px;
+  height: 1024px;
+}
+
+.slot {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 85px;
+    background-color: green;
+}
+
+.skew27 {
+    transform: skew(27deg);
+}
+.skew10 {
+    transform: skew(10deg);
+}
+.skewn10 {
+    transform: skew(-10deg);
+}
+.rotate35 {
+    transform: rotate(35deg);
+}
+.rotate50 {
+    transform: rotate(50deg);
+}
+.rotate60 {
+    transform: rotate(57deg);
+}
+.rotate140 {
+    transform: rotate(140deg);
+}
+
+#slot1 {
+    top: 50px;
+    left: 265px;
+}
+#slot2 {
+    top: 55px;
+    left: 315px;
+}
+#slot3 {
+    top: 60px;
+    left: 370px;
+}
+#slot4 {
+    top: 70px;
+    left: 425px;
+}
+
+#slot5 {
+    top: 80px;
+    left: 480px;
+}
+#slot6 {
+    top: 90px;
+    left: 535px;
+}
+#slot7 {
+    top: 95px;
+    left: 590px;
+}
+#slot8 {
+    top: 105px;
+    left: 645px;
+}
+#slot9 {
+    top: 115px;
+    left: 700px;
+}
+#slot10 {
+    top: 133px;
+    left: 790px;
+}
+#slot11 {
+    top: 160px;
+    left: 850px;
+}
+#slot12 {
+    top: 205px;
+    left: 905px;
+    height: 70px;
+}
+
+#slot13 {
+    top: 260px;
+    left: 920px;
+}
+
+#slot14 {
+    top: 315px;
+    left: 910px;
+}
+#slot15 {
+    top: 365px;
+    left: 910px;
+}
+#slot16 {
+    top: 430px;
+    left: 890px;
+}
+#slot17 {
+    top: 480px;
+    left: 890px;
+}
+#slot18 {
+    top: 537px;
+    left: 885px;
+}
+#slot19 {
+    top: 410px;
+    left: 760px;
+}
+#slot20 {
+    top: 345px;
+    left: 765px;
+}
+#slot21 {
+    top: 250px;
+    left: 700px;
+}
+#slot22 {
+    top: 240px;
+    left: 650px;
+}
+#slot23 {
+    top: 240px;
+    left: 580px;
+}
+#slot24 {
+    top: 230px;
+    left: 527px;
+}
+#slot25 {
+    top: 220px;
+    left: 478px;
+}
+
+#container {
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+#legend {
+  left: 420px;
+  top: 593px;
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  border-radius: 6em;
+  position: absolute;
+}
+
+#info {
+   text-align: center;
+   margin: auto;
+   padding: 2em;
+}
+
+#count {
+  background-color: black;
+  border-radius: 5px;
+  height: 100px;
+  width: 100px;
+}
+
+</style>
+</head>
+<body>
+<div id='container'>
+<div id='slot1' class='slot skew27'>1</div>
+<div id='slot2' class='slot skew27'>2</div>
+<div id='slot3' class='slot skew27'>3</div>
+<div id='slot4' class='slot skew27'>4</div>
+<div id='slot5' class='slot skew27'>5</div>
+<div id='slot6' class='slot skew27'>6</div>
+<div id='slot7' class='slot skew27'>7</div>
+<div id='slot8' class='slot skew27'>8</div>
+<div id='slot9' class='slot skew27'>9</div>
+<div id='slot10' class='slot skew10'>10</div>
+<div id='slot11' class='slot skewn10'>11</div>
+<div id='slot12' class='slot rotate35'>12</div>
+<div id='slot13' class='slot rotate60'>13</div>
+<div id='slot14' class='slot rotate60'>14</div>
+<div id='slot15' class='slot rotate60'>15</div>
+<div id='slot16' class='slot rotate60'>16</div>
+<div id='slot17' class='slot rotate60'>17</div>
+<div id='slot18' class='slot rotate60'>18</div>
+<div id='slot19' class='slot rotate140'>19</div>
+<div id='slot20' class='slot rotate140'>20</div>
+<div id='slot21' class='slot rotate50'>21</div>
+<div id='slot22' class='slot rotate50'>22</div>
+<div id='slot23' class='slot rotate50'>23</div>
+<div id='slot24' class='slot rotate50'>24</div>
+<div id='slot25' class='slot rotate50'>25</div>
+<div id='legend' class='legend'>
+  <div id='info'>
+    Total: <span id='count'>25</span>
+    Available: <span id='count'>0</span>
+  </div>
+</div>
+</div>
+</body>
+</html>
