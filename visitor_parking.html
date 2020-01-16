@@ -223,10 +223,19 @@ body {
 <div id='slot25' class='slot rotate50'>25</div>
 <div id='legend' class='legend'>
   <div id='info'>
-    Total: <span id='count'>25</span>
+    Total: <span>25</span>
     Available: <span id='count'>0</span>
   </div>
 </div>
 </div>
+ <script src="jquery.min.js"></script>
+	<script>
+           var available_slots = $('.slot:visible').length;
+           $('#count').html(available_slots);
+
+            //var timerID = setInterval(function() {
+            //}, 60 * 1000); 
+
+	</script>
 </body>
 </html>
