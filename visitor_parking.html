@@ -230,12 +230,19 @@ body {
 </div>
  <script src="jquery.min.js"></script>
 	<script>
-           var available_slots = $('.slot:visible').length;
-           $('#count').html(available_slots);
 
-            //var timerID = setInterval(function() {
-            //}, 60 * 1000); 
-
+           function get_free_slots() {
+               random_slots = Math.floor(Math.random() * 25) + 1;
+	       $('.slot').show();
+               for ( i=0; i < random_slots; i++ ) {
+		    rslot = random_slots;
+		    slot = Math.floor(Math.random() * rslot) + 1;
+		    $('#slot'+slot).hide();
+	       }
+               var available_slots = $('.slot:visible').length;
+               $('#count').html(available_slots);
+           }
+           setInterval(get_free_slots, 5000); 
 	</script>
 </body>
 </html>
