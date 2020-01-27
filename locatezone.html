@@ -43,6 +43,7 @@ body {
 
     .highlight_zone {
       background-color: chartreuse !important;
+      transition:  background 1.0s fade-in-out;
     }    
     
 .skew27 {
@@ -227,28 +228,77 @@ body {
 <div id='slot25' class='slot rotate50'>25</div>
 <div id='legend' class='legend'>
   <div id='info'>
-    Total: <span>25</span>
-    Available: <span id='count'>25</span>
+    Zone: <span id='zone'></span>
   </div>
+</div>
+<div id='locator'>
+    <label> Enter License Number: </label>
+    <input id='search_txt' type='text'></input>
+    <input id="locate" type='button' value='Locate'></input>
 </div>
 </div>
  <script src="jquery.min.js"></script>
 	<script>
+        $('.slot').hide();       
 
-           function get_free_slots() {
-               random_slots = Math.floor(Math.random() * 25) + 1;
-	       $('.slot').show();
-               for ( i=0; i < random_slots; i++ ) {
-		    rslot = random_slots;
-		    slot = Math.floor(Math.random() * rslot) + 1;
-		    $('#slot'+slot).hide();
-	       }
-               var available_slots = $('.slot:visible').length;
-               $('#count').html(available_slots);
-           }
-           setInterval(get_free_slots, 5000); 
         
-        
+       zone_slot_map = { 'zone1': {'slots': ['slot1', 'slot2', 'slot3', 'slot4', 'slot5'],
+                                   'cars':['ABC1234', 'BBX0228']
+                                  },
+                         'zone2': {'slots': ['slot6', 'slot7', 'slot8', 'slot9', 'slot10'],
+                                   'cars':['FZZ3229', 'FTG6777']
+                                  },
+                         'zone3': {'slots': ['slot11', 'slot12', 'slot13', 'slot14'],
+                                   'cars':['GRR2435']
+                                  },
+                         'zone4': { 'slots': ['slot15','slot16', 'slot17', 'slot18'],
+                                    'cars':['JKG6812']
+                                  },
+                         'zone5': { 'slots': ['slot19','slot20'],
+                                    'cars':['NMH8822']
+                                  },
+                         'zone6': { 'slots': ['slot21','slot22', 'slot23', 'slot24', 'slot25'],
+                                    'cars':['BCN8287', 'CKP9291']
+                                  }
+                       };
+       function highlight_zone(zone) {
+           $('.slot').hide();
+           $('#zone').html(zone);
+           zone_slot_map[zone]['slots'].forEach(function(el){
+               $('#'+el).show();
+               var backgroundInterval = setInterval(function(){
+                    $('#'+el).toggleClass('highlight_zone');
+                },1500)
+               
+           })
+           
+       }
+       function locate_car(search_str) {
+           var found = false;
+           $.each(zone_slot_map, function(key, val){
+               console.log(val['cars']);
+                if ( found == true) {
+                   return false;
+                }
+                $.each(val['cars'], function(k,v) {
+                  if(v.indexOf(search_str.toUpperCase()) != -1){
+                    console.log(' number : ' + v + ' matched : ' + search_str);
+                    console.log('zone identified ' + key);
+                    highlight_zone(key);
+                    found = true;
+                      return false;
+                  }
+                })
+           })
+           
+       }
+        $(document).ready(function(){
+           $('#locate').click(function(){
+               search_str = $('#search_txt')[0].value;
+               locate_car(search_str);
+           }) 
+        });
+       
 	</script>
 </body>
 </html>
